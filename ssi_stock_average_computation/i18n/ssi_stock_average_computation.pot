@@ -236,7 +236,6 @@ msgid ""
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__create_uid
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation__create_uid
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__create_uid
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_type__create_uid
@@ -244,7 +243,6 @@ msgid "Created by"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__create_date
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation__create_date
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__create_date
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_type__create_date
@@ -287,7 +285,6 @@ msgid "Details of the stock average computation."
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__display_name
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_product__display_name
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation__display_name
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__display_name
@@ -336,7 +333,6 @@ msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__id
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_product__id
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation__id
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__id
@@ -403,7 +399,6 @@ msgid "Is Follower"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation____last_update
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_product____last_update
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation____last_update
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail____last_update
@@ -413,7 +408,6 @@ msgid "Last Modified on"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__write_uid
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation__write_uid
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__write_uid
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_type__write_uid
@@ -421,7 +415,6 @@ msgid "Last Updated by"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__write_date
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation__write_date
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__write_date
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_type__write_date
@@ -434,26 +427,22 @@ msgid "Latest Average Computation"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__latest_average_computation_date
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_product__latest_average_computation_date
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__latest_average_computation_date
 msgid "Latest Average Computation Date"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__latest_average_cost
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__latest_average_cost
 msgid "Latest Average Cost"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__latest_quantity
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__latest_quantity
 msgid "Latest Quantity"
 msgstr ""
 
 #. module: ssi_stock_average_computation
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__latest_value
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__latest_value
 msgid "Latest Value"
 msgstr ""
@@ -613,16 +602,10 @@ msgstr ""
 
 #. module: ssi_stock_average_computation
 #: model:ir.model,name:ssi_stock_average_computation.model_product_product
-#: model:ir.model.fields,field_description:ssi_stock_average_computation.field_product_average_computation__product_id
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__product_id
 #: model_terms:ir.ui.view,arch_db:ssi_stock_average_computation.stock_average_computation_type_view_form
 #: model_terms:ir.ui.view,arch_db:ssi_stock_average_computation.stock_average_computation_view_form
 msgid "Product"
-msgstr ""
-
-#. module: ssi_stock_average_computation
-#: model:ir.model,name:ssi_stock_average_computation.model_product_average_computation
-msgid "Product - Average Computation"
 msgstr ""
 
 #. module: ssi_stock_average_computation
@@ -807,13 +790,11 @@ msgstr ""
 
 #. module: ssi_stock_average_computation
 #: model:ir.model,name:ssi_stock_average_computation.model_stock_move
-#: model_terms:ir.ui.view,arch_db:ssi_stock_average_computation.stock_average_computation_view_form
 msgid "Stock Move"
 msgstr ""
 
 #. module: ssi_stock_average_computation
 #: model:ir.model.fields,field_description:ssi_stock_average_computation.field_stock_average_computation_detail__stock_move_ids
-#: model_terms:ir.ui.view,arch_db:ssi_stock_average_computation.stock_average_computation_view_form
 msgid "Stock Moves"
 msgstr ""
 
