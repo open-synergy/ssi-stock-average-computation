@@ -7,7 +7,7 @@
         <record id="stock_average_computation_type_configurator" model="res.groups">
             <field name="name">Stock Average Computation Type</field>
             <field
-                name="parent_id"
+                name="category_id"
                 eval="ref('ssi_stock.inventory_configurator_module_category')"
             />
             <field

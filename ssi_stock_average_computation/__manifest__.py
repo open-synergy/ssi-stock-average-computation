@@ -18,7 +18,7 @@
         "queue_job_batch",
     ],
     "data": [
-        "security/res_group.xml",
+        "security/res_groups.xml",
         "security/ir_model_access.xml",
         "security/ir_module_category/stock_average_computation.xml",
         "security/res_groups/stock_average_computation.xml",
