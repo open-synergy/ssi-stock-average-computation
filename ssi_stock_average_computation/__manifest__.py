@@ -4,7 +4,7 @@
 
 {
     "name": "SSI Stock Average Computation",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.1.0",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "website": "https://github.com/open-synergy/ssi-stock-average-computation",
     "license": "AGPL-3",
