@@ -23,7 +23,6 @@
         "security/ir_module_category/stock_average_computation.xml",
         "security/res_groups/stock_average_computation.xml",
         "security/ir_model_access/stock_average_computation.xml",
-        "security/ir_model_access/product_average_computation.xml",
         "security/ir_rule/stock_average_computation.xml",
         "ir_sequence/stock_average_computation.xml",
         "sequence_template/stock_average_computation.xml",

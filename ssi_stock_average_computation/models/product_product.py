@@ -13,17 +13,20 @@ class ProductProduct(models.Model):
         comodel_name="stock_average_computation.detail",
         inverse_name="product_id",
         string="Average Computations",
+        readonly=True,
     )
     latest_average_computation_id = fields.Many2one(
         comodel_name="stock_average_computation.detail",
         string="Latest Average Computation",
         compute="_compute_latest_average_computation_date",
         store=True,
+        compute_sudo=True,
     )
     latest_average_computation_date = fields.Datetime(
         string="Latest Average Computation Date",
         compute="_compute_latest_average_computation_date",
         store=True,
+        compute_sudo=True,
     )
 
     @api.depends(
