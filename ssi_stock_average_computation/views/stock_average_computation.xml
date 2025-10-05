@@ -142,16 +142,6 @@
                 </form>
               </field>
             </page>
-            <page name="stock_move" string="Stock Moves">
-              <button
-                                name="action_reload_stock_move"
-                                string="Stock Move"
-                                type="object"
-                                attrs="{'invisible':[('state','!=','draft')]}"
-                                class="oe_highlight"
-                                icon="fa-refresh"
-                            />
-            </page>
           </xpath>
         </data>
       </field>
