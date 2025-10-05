@@ -20,35 +20,42 @@ class StockAverageComputationDetail(models.Model):
         comodel_name="product.product",
         string="Product",
         required=True,
+        ondelete="restrict",
     )
     average_computation_id = fields.Many2one(
         comodel_name="stock_average_computation.detail",
         string="Average Computation",
+        ondelete="set null",
     )
     latest_average_computation_date = fields.Datetime(
         string="Latest Average Computation Date",
         related="average_computation_id.date_cutoff",
         store=True,
+        readonly=True,
     )
     date_cutoff = fields.Datetime(
         string="Date Cutoff",
         related="stock_average_computation_id.date_end",
         store=True,
+        readonly=True,
     )
     latest_average_cost = fields.Float(
         string="Latest Average Cost",
         related="average_computation_id.average_cost",
         store=True,
+        readonly=True,
     )
     latest_quantity = fields.Float(
         string="Latest Quantity",
         related="average_computation_id.qty_total",
         store=True,
+        readonly=True,
     )
     latest_value = fields.Float(
         string="Latest Value",
         related="average_computation_id.value_total",
         store=True,
+        readonly=True,
     )
     qty_incoming = fields.Float(
         string="Qty Incoming",
@@ -66,11 +73,13 @@ class StockAverageComputationDetail(models.Model):
         string="Qty Based",
         compute="_compute_average_cost",
         store=True,
+        compute_sudo=True,
     )
     average_cost = fields.Float(
         string="Average Cost",
         compute="_compute_average_cost",
         store=True,
+        compute_sudo=True,
     )
     qty_outgoing = fields.Float(
         string="Qty Outgoing",
@@ -82,41 +91,48 @@ class StockAverageComputationDetail(models.Model):
         string="Qty Total",
         compute="_compute_total",
         store=True,
+        compute_sudo=True,
     )
     value_total = fields.Float(
         string="Value Total",
         compute="_compute_total",
         store=True,
+        compute_sudo=True,
     )
 
     stock_move_ids = fields.One2many(
         comodel_name="stock.move",
         inverse_name="stock_average_computation_id",
         string="Stock Moves",
+        readonly=True,
     )
     incoming_stock_move_ids = fields.Many2many(
         comodel_name="stock.move",
         string="Incoming Stock Moves",
         compute="_compute_incoming",
         store=False,
+        compute_sudo=True,
     )
     outgoing_stock_move_ids = fields.Many2many(
         comodel_name="stock.move",
         string="Outgoing Stock Moves",
         compute="_compute_outgoing",
         store=False,
+        compute_sudo=True,
     )
     incoming_transit_stock_move_ids = fields.Many2many(
         comodel_name="stock.move",
         string="Incoming Transit Stock Moves",
         compute="_compute_incoming_transit",
         store=False,
+        compute_sudo=True,
     )
     outgoing_transit_stock_move_ids = fields.Many2many(
         comodel_name="stock.move",
         string="Outgoing Transit Stock Moves",
         compute="_compute_outgoing_transit",
         store=False,
+        compute_sudo=True,
     )
 
     svl_to_change_ids = fields.Many2many(
@@ -124,6 +140,7 @@ class StockAverageComputationDetail(models.Model):
         string="Stock Valuation Layers to Change",
         compute="_compute_svl_to_change",
         store=False,
+        compute_sudo=True,
     )
 
     def _compute_svl_to_change(self):

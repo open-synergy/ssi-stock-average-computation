@@ -89,6 +89,7 @@ class StockAverageComputation(models.Model):
     type_id = fields.Many2one(
         comodel_name="stock_average_computation_type",
         required=True,
+        ondelete="restrict",
         string="Type",
         readonly=True,
         states={
@@ -148,6 +149,7 @@ class StockAverageComputation(models.Model):
         string="Queue Job Batch State",
         related="processing_queue_job_batch_id.state",
         store=True,
+        readonly=True,
     )
 
     @api.depends("type_id")
