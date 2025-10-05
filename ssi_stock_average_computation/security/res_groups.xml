@@ -1,0 +1,19 @@
+<!-- Copyright 2025 OpenSynergy Indonesia
+     Copyright 2025 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data>
+        <!-- D.1: res.groups for mixin.master_data object -->
+        <record id="stock_average_computation_type_configurator" model="res.groups">
+            <field name="name">Stock Average Computation Type</field>
+            <field
+                name="category_id"
+                eval="ref('ssi_stock.inventory_configurator_module_category')"
+            />
+            <field
+                name="users"
+                eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+            />
+        </record>
+    </data>
+</odoo>

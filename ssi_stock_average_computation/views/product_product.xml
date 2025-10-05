@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<record id="product_product_form_view" model="ir.ui.view">
+    <field name="name">product.product - form</field>
+    <field name="model">product.product</field>
+    <field name="inherit_id" ref="product.product_normal_form_view" />
+    <field name="arch" type="xml">
+
+        <xpath expr="//notebook" position="inside">
+            <page name="average_computation" string="Average Computation">
+                <group name="group_average_computation" colspan="4" col="2">
+                    <field name="latest_average_computation_id" />
+                    <field name="latest_average_computation_date" />
+                </group>
+                <field name="average_computation_ids">
+                    <tree>
+                        <field name="product_id" />
+                        <field name="average_computation_id" />
+                        <field name="latest_average_computation_date" />
+                        <field name="date_cutoff" />
+                        <field name="latest_quantity" />
+                        <field name="latest_value" />
+                        <field name="qty_incoming" />
+                        <field name="value_incoming" />
+                        <field name="qty_based" />
+                        <field name="average_cost" />
+                        <field name="qty_outgoing" />
+                        <field name="qty_total" />
+                        <field name="value_total" />
+                    </tree>
+                    <form>
+                        <sheet>
+                            <group>
+                                <field name="product_id" />
+                                <field name="average_computation_id" />
+                                <field name="latest_average_computation_date" />
+                                <field name="date_cutoff" />
+                                <field name="latest_quantity" />
+                                <field name="latest_value" />
+                                <field name="qty_incoming" />
+                                <field name="value_incoming" />
+                                <field name="qty_based" />
+                                <field name="average_cost" />
+                                <field name="qty_outgoing" />
+                                <field name="qty_total" />
+                                <field name="value_total" />
+                            </group>
+                        </sheet>
+                    </form>
+                </field>
+            </page>
+        </xpath>
+    </field>
+</record>
+</odoo>

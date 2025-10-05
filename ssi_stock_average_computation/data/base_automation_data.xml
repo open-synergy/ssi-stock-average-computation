@@ -1,0 +1,14 @@
+<odoo>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<data>
+<record id="cron_remove_processing_queue_batch" model="base.automation">
+    <field name="action_server_id" ref="action_remove_processing_queue_batch" />
+    <field name="trigger">on_write</field>
+    <field
+                name="filter_domain"
+            >[('processing_queue_job_batch_state','=','finished')]</field>
+</record>
+</data>
+</odoo>

@@ -1,0 +1,176 @@
+<!-- Copyright 2025 OpenSynergy Indonesia
+     Copyright 2025 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+  <data>
+    <!-- E.8: Search view (inherits transaction mixin search) -->
+    <record id="stock_average_computation_view_search" model="ir.ui.view">
+      <field name="name">stock_average_computation - search</field>
+      <field name="model">stock_average_computation</field>
+      <field
+                name="inherit_id"
+                ref="ssi_transaction_mixin.mixin_transaction_view_search"
+            />
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <data>
+        </data>
+      </field>
+    </record>
+
+    <!-- E.8: Tree view (inherits transaction mixin tree) -->
+    <record id="stock_average_computation_view_tree" model="ir.ui.view">
+      <field name="name">stock_average_computation - tree</field>
+      <field name="model">stock_average_computation</field>
+      <field
+                name="inherit_id"
+                ref="ssi_transaction_mixin.mixin_transaction_view_tree"
+            />
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <data>
+          <xpath expr="//field[@name='company_id']" position="after">
+            <field name="type_id" />
+            <field name="date_end" />
+          </xpath>
+        </data>
+      </field>
+    </record>
+
+    <!-- E.8: Form view (inherits transaction mixin form) -->
+    <record id="stock_average_computation_view_form" model="ir.ui.view">
+      <field name="name">stock_average_computation - form</field>
+      <field name="model">stock_average_computation</field>
+      <field
+                name="inherit_id"
+                ref="ssi_transaction_mixin.mixin_transaction_view_form"
+            />
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <data>
+          <xpath expr="//field[@name='user_id']" position="after">
+            <field name="type_id" />
+          </xpath>
+          <xpath expr="//group[@name='header_right']" position="inside">
+            <field name="date" />
+            <field name="date_end" />
+          </xpath>
+          <xpath expr="//page[1]" position="before">
+            <page name="product" string="Products" invisible="1">
+              <button
+                                name="action_reload_product"
+                                string="Product"
+                                type="object"
+                                attrs="{'invisible':[('state','!=','draft')]}"
+                                class="oe_highlight"
+                                icon="fa-refresh"
+                            />
+              <field name="product_ids" />
+            </page>
+            <page name="detail" string="Detail">
+              <group
+                                name="detail_1"
+                                colspan="4"
+                                col="2"
+                                attrs="{'invisible':[('processing_queue_job_batch_id','=',False)]}"
+                            >
+                <field name="processing_queue_job_batch_id" string="# Batch" />
+                <field name="processing_queue_job_batch_state" string="State" />
+              </group>
+              <button
+                                name="action_queue_processing"
+                                string="Detail"
+                                type="object"
+                                attrs="{'invisible':[('state','!=','draft')]}"
+                                class="oe_highlight"
+                                icon="fa-refresh"
+                            />
+              <field name="detail_ids">
+                <tree>
+                  <field name="product_id" />
+                  <field name="average_computation_id" invisible="1" />
+                  <field name="latest_average_computation_date" invisible="1" />
+                  <field name="date_cutoff" invisible="1" />
+                  <field name="latest_quantity" />
+                  <field name="latest_value" />
+                  <field name="qty_incoming" />
+                  <field name="value_incoming" />
+                  <field name="qty_based" />
+                  <field name="average_cost" />
+                  <field name="qty_outgoing" />
+                  <field name="qty_total" />
+                  <field name="value_total" />
+                </tree>
+                <form>
+                  <sheet>
+                    <group name="detail_1" colspan="4" col="2">
+                      <field name="product_id" />
+                    </group>
+                    <group name="detail_2" colspan="4" col="2">
+                      <group name="detail_2_1" colspan="1" col="2">
+                        <field name="latest_quantity" />
+                        <field name="latest_value" />
+                      </group>
+                      <group name="detail_2_2" colspan="1" col="2">
+                        <field name="qty_incoming" />
+                        <field name="value_incoming" />
+                        <field name="qty_based" />
+                        <field name="average_cost" />
+                        <field name="qty_outgoing" />
+                        <field name="qty_total" />
+                        <field name="value_total" />
+                      </group>
+                    </group>
+                    <notebook>
+                      <page name="incoming" string="Incoming">
+                        <field name="incoming_stock_move_ids" />
+                      </page>
+                      <page name="outgoing" string="Outgoing">
+                        <field name="outgoing_stock_move_ids" />
+                      </page>
+                      <page name="outgoint_transit" string="Outgoing Transit">
+                        <field name="outgoing_transit_stock_move_ids" />
+                      </page>
+                      <page name="incoming_transit" string="Incoming Transit">
+                        <field name="incoming_transit_stock_move_ids" />
+                      </page>
+                      <page name="svL" string="SVL To Change">
+                        <field name="svl_to_change_ids" />
+                      </page>
+                    </notebook>
+                  </sheet>
+                </form>
+              </field>
+            </page>
+            <page name="stock_move" string="Stock Moves">
+              <button
+                                name="action_reload_stock_move"
+                                string="Stock Move"
+                                type="object"
+                                attrs="{'invisible':[('state','!=','draft')]}"
+                                class="oe_highlight"
+                                icon="fa-refresh"
+                            />
+            </page>
+          </xpath>
+        </data>
+      </field>
+    </record>
+
+    <!-- E.8: Window action -->
+    <record id="stock_average_computation_action" model="ir.actions.act_window">
+      <field name="name">Stock Average Computations</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">stock_average_computation</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- E.8: Menu (placeholder parent) -->
+    <menuitem
+            id="stock_average_computation_menu"
+            name="Stock Average Computations"
+            action="stock_average_computation_action"
+            parent="stock.menu_stock_warehouse_mgmt"
+        />
+  </data>
+</odoo>
