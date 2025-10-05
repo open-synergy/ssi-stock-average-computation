@@ -1,0 +1,45 @@
+<!-- Copyright 2025 OpenSynergy Indonesia
+     Copyright 2025 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+  <data>
+    <!-- E.3: ir.model.access for transaction object -->
+    <record id="stock_average_computation_all_access" model="ir.model.access">
+      <field name="name">stock_average_computation - all</field>
+      <field name="model_id" ref="model_stock_average_computation" />
+      <field name="group_id" eval="False" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="stock_average_computation_user_access" model="ir.model.access">
+      <field name="name">stock_average_computation - user</field>
+      <field name="model_id" ref="model_stock_average_computation" />
+      <field name="group_id" ref="stock_average_computation_user_group" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+
+    <record id="stock_average_computation_detail_all_access" model="ir.model.access">
+      <field name="name">stock_average_computation.detail - all</field>
+      <field name="model_id" ref="model_stock_average_computation_detail" />
+      <field name="group_id" eval="False" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="0" />
+      <field name="perm_create" eval="0" />
+      <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="stock_average_computation_detail_user_access" model="ir.model.access">
+      <field name="name">stock_average_computation.detail - user</field>
+      <field name="model_id" ref="model_stock_average_computation_detail" />
+      <field name="group_id" ref="stock_average_computation_user_group" />
+      <field name="perm_read" eval="1" />
+      <field name="perm_write" eval="1" />
+      <field name="perm_create" eval="1" />
+      <field name="perm_unlink" eval="1" />
+    </record>
+  </data>
+</odoo>

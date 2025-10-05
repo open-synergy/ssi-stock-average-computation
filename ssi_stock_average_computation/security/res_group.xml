@@ -1,0 +1,14 @@
+<!-- Copyright 2025 OpenSynergy Indonesia
+     Copyright 2025 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data>
+        <!-- D.1: res.groups for mixin.master_data object -->
+        <record id="stock_average_computation_type_configurator" model="res.groups">
+            <field name="name">Stock Average Computation Type</field>
+            <!-- parent_id: set to PARENT_GROUP_CONFIGURATOR when provided -->
+            <!-- <field name="parent_id" ref="PARENT_GROUP_CONFIGURATOR"/> -->
+        </record>
+    </data>
+
+</odoo>
