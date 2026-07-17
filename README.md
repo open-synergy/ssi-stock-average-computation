@@ -22,6 +22,7 @@ Available addons
 addon | version | maintainers | summary
 --- | --- | --- | ---
 [ssi_stock_average_computation](ssi_stock_average_computation/) | 14.0.1.1.0 |  | SSI Stock Average Computation
+[ssi_stock_average_computation_operating_unit](ssi_stock_average_computation_operating_unit/) | 14.0.1.0.0 |  | Stock Average Computation + Operating Unit
 
 [//]: # (end addons)
 
