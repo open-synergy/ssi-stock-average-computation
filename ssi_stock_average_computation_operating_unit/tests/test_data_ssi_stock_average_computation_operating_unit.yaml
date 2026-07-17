@@ -1,16 +1,14 @@
-setup:
-  steps:
-    - step: "Create stock average computation type"
-      action: "create"
-      model: "stock_average_computation_type"
-      save_as: "type"
-      values:
-        name: "Test Stock Average Computation Type OU"
-        code: "TESTSACTYPEOU"
-
 scenarios:
   - name: "Create Stock Average Computation with Operating Unit"
     steps:
+      - step: "Create stock average computation type"
+        action: "create"
+        model: "stock_average_computation_type"
+        save_as: "type"
+        values:
+          name: "Test Stock Average Computation Type OU 1"
+          code: "TESTSACTYPEOU1"
+
       - step: "Create stock_average_computation with operating_unit_id"
         action: "create"
         model: "stock_average_computation"
@@ -31,6 +29,14 @@ scenarios:
 
   - name: "User without operating unit access cannot read or write"
     steps:
+      - step: "Create stock average computation type"
+        action: "create"
+        model: "stock_average_computation_type"
+        save_as: "type"
+        values:
+          name: "Test Stock Average Computation Type OU 2"
+          code: "TESTSACTYPEOU2"
+
       - step: "Create restricted operating unit"
         action: "create"
         model: "operating.unit"
